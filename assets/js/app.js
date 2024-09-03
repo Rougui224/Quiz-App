@@ -47,7 +47,7 @@ function showCheck() {
   }
   timeoutId = setTimeout(function () {
     checkQuiz();
-  }, 10000);
+  }, 30000);
 }
 function startQuiz() {
   currentSection = quizSessions[randomVariable].questions;
