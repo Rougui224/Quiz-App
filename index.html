@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <div class="app">
+      <span class="app_questionNumber"></span>
+
+      <div class="app_quiz">
+        <p class="app_quiz_question">
+          <!-- Question ici -->
+        </p>
+        <span>
+          <!-- ici le conteneur du remplissement -->
+          <span class="progress">
+            <!-- le remplissage ici -->
+          </span>
+        </span>
+        <ul class="app_quiz_options">
+          <li>
+            <span>A</span>
+            <p>
+              <!-- reponse ici -->
+            </p>
+          </li>
+          <li>
+            <span>B</span>
+            <p>
+              <!-- reponse ici -->
+              ALU (Arithmetic Logic Unit)
+            </p>
+          </li>
+          <li>
+            <span>C</span>
+            <p>ALU (Arithmetic Logic Unit)</p>
+          </li>
+          <li>
+            <span>D</span>
+            <p>ALU (Arithmetic Logic Unit)</p>
+          </li>
+        </ul>
+        <button class="validateButton">Validate</button>
+        <button class="nextButton">Next</button>
+      </div>
+    </div>
+    <div class="overlay"></div>
+    <div class="modal">
+      <p>
+        Welcome to our interactive quiz game! Each session is composed of
+        <span>10 captivating questions</span>
+        that will test your knowledge. For each question, you will have
+        <span>4 options</span>
+        to choose from, but beware, at least
+        <span>one</span>
+        of them is incorrect! You have
+        <span>30 seconds</span>
+        to think and select the right answer. If time runs out, don’t worry, we
+        will automatically move on to the next question. Get ready, test your
+        skills, and have fun discovering how much you know! Good luck!
+      </p>
+      <button>Start</button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/app.js" type="module"></script>
+  </body>
+</html>
