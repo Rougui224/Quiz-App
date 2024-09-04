@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  //   overflow: hidden;
   font-family: "Roboto", system-ui;
 }
 /* Design de l'app */
@@ -16,9 +16,11 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-width: 280px;
 }
 .app {
   position: relative;
+  overflow: hidden;
   margin: 50px auto;
   width: 600px;
   height: 600px;
@@ -154,13 +156,13 @@ ul li p {
   cursor: pointer;
 }
 .active {
-  border: 3px solid #007bff;
+  outline: 3px solid #007bff;
 }
 .error {
-  border: 3px solid red;
+  outline: 3px solid red;
 }
 .done {
-  border: 3px solid green;
+  outline: 3px solid green;
 }
 /* Bouton valider */
 button {
@@ -175,7 +177,7 @@ button {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 .nextButton {
   display: none;
@@ -265,6 +267,6 @@ button:hover {
   }
   .modal {
     width: 80%;
-    height: 400px;
+    height: auto;
   }
 }
