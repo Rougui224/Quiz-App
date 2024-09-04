@@ -92,15 +92,29 @@ function startQuiz() {
   areaQuestionElement.text(question);
   optionsListElements.each(function (index, element) {
     $(element).text(options[index]);
-    $(element).one("click", function () {
-      console.log("lu");
-      $(this).addClass("active");
-      if (correctAnswers.includes(index)) {
-        UserCorrectAnswers.push(index);
-      } else {
-        wrongAnswers.push(index);
-      }
-    });
+    $(element)
+      .off("click")
+      .on("click", function () {
+        $(this).toggleClass("active");
+        if ($(this).hasClass("active")) {
+          if (correctAnswers.includes(index)) {
+            UserCorrectAnswers.push(index);
+          } else {
+            wrongAnswers.push(index);
+          }
+        } else {
+          // retirer l'élément des tableau si la classe 'active' est desactivé
+          if (UserCorrectAnswers.includes(index)) {
+            UserCorrectAnswers = UserCorrectAnswers.filter(function (answer) {
+              return answer !== index;
+            });
+          } else if (wrongAnswers.includes(index)) {
+            wrongAnswers = wrongAnswers.filter(function (answer) {
+              return answer !== index;
+            });
+          }
+        }
+      });
   });
 }
 function startTimingElement() {
@@ -135,6 +149,9 @@ function checkQuiz() {
   });
   calculateScore(correctAnswers);
   clearTimeout(timeoutId);
+  //   console.log("correct answer", correctAnswers);
+  //   console.log("user correct answer", UserCorrectAnswers);
+  //   console.log("wrong amswer", wrongAnswers);
   UserCorrectAnswers = [];
   wrongAnswers = [];
   hasUserValidateAnswers = false;
@@ -148,6 +165,7 @@ $(".nextButton").click(function () {
   startQuiz();
   startTimingElement();
   showCheck();
+  console.log(score);
 });
 $(".modal").click(function () {
   CheckRamdomVarable();

@@ -44,7 +44,7 @@ body {
   }
   &_quiz {
     background: #f7f7f7;
-
+    height: 100%;
     position: relative;
     padding: 20px 0;
     transform: translateX(100%);
@@ -120,7 +120,7 @@ body {
 /* Style de la liste des réponses */
 ul {
   width: 400px;
-  margin: auto;
+  margin: 30px auto;
   list-style: none;
   padding: 0;
 }
@@ -255,9 +255,10 @@ button:hover {
       &_options {
         height: calc(50% - 60px);
         width: 90%;
+        margin: 0 auto;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
       }
     }
     button {
